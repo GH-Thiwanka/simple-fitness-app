@@ -1,11 +1,23 @@
+import 'package:fitness/pages/workoutPage.dart';
 import 'package:fitness/widget/buttons.dart';
 import 'package:fitness/widget/colors.dart';
 import 'package:fitness/widget/containerWidget.dart';
 import 'package:fitness/widget/size.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class Dashboardpage extends StatelessWidget {
+class Dashboardpage extends StatefulWidget {
   const Dashboardpage({super.key});
+
+  @override
+  State<Dashboardpage> createState() => _DashboardpageState();
+}
+
+class _DashboardpageState extends State<Dashboardpage> {
+  @override
+  void setState(VoidCallback fn) {
+    super.setState(fn);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +41,16 @@ class Dashboardpage extends StatelessWidget {
                     Stack(
                       alignment: AlignmentDirectional.bottomCenter,
                       children: [
-                        Containerwidget(
-                          imgPath: 'assets/images/cycling.jpg',
-                          imgHight: KSize.getHeight(context) * 0.21,
-                          imgWidth: KSize.getWidth(context) * 0.45,
+                        InkWell(
+                          splashColor: KWhite,
+                          onTap: () {
+                            context.go('/workout');
+                          },
+                          child: Containerwidget(
+                            imgPath: 'assets/images/cycling.jpg',
+                            imgHight: KSize.getHeight(context) * 0.21,
+                            imgWidth: KSize.getWidth(context) * 0.45,
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(10.0),
