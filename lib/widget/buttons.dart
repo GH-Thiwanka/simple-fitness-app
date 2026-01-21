@@ -1,4 +1,5 @@
 import 'package:fitness/widget/colors.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class StartTrainingButton extends StatelessWidget {
@@ -13,22 +14,11 @@ class StartTrainingButton extends StatelessWidget {
         Row(
           children: [
             Flexible(
-              child: Container(
+              child: SmallButton(
+                text: 'Start Training',
                 height: 40,
-                decoration: BoxDecoration(
-                  color: kDarkRed,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Center(
-                  child: Text(
-                    'Start Training',
-                    style: TextStyle(
-                      color: KWhite,
-                      fontSize: 15,
-                      fontFamily: 'Alatsi',
-                    ),
-                  ),
-                ),
+                fontSize: 15,
+                iswidth: false,
               ),
             ),
             Container(
@@ -48,6 +38,46 @@ class StartTrainingButton extends StatelessWidget {
           ],
         ),
       ],
+    );
+  }
+}
+
+class SmallButton extends StatelessWidget {
+  final double height;
+  final double width;
+  final String text;
+  final Color color;
+  final double fontSize;
+  final bool iswidth;
+  const SmallButton({
+    super.key,
+    this.height = 25,
+    this.width = 100,
+    required this.text,
+    this.color = const Color(0xFFB22222),
+    this.fontSize = 10,
+    this.iswidth = true,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height,
+      width: iswidth ? width : null,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: TextStyle(
+            color: KWhite,
+            fontSize: fontSize,
+            fontFamily: 'Alatsi',
+          ),
+        ),
+      ),
     );
   }
 }

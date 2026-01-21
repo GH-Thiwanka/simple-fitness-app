@@ -1,10 +1,32 @@
+import 'dart:async';
+
 import 'package:fitness/widget/buttons.dart';
 import 'package:fitness/widget/colors.dart';
 import 'package:fitness/widget/size.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class Splashpage extends StatelessWidget {
+class Splashpage extends StatefulWidget {
   const Splashpage({super.key});
+
+  @override
+  State<Splashpage> createState() => _SplashpageState();
+}
+
+class _SplashpageState extends State<Splashpage> {
+  @override
+  void initState() {
+    super.initState();
+
+    Timer(const Duration(seconds: 5), () {
+      context.go('/home');
+    });
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    super.setState(fn);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,18 +52,14 @@ class Splashpage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  'Join the Fitness \nClub',
-                  style: TextStyle(
-                    fontFamily: 'Alatsi',
-                    fontSize: 32,
-                    color: Colors.white,
-                  ),
+                KdefaultTextStyle(
+                  text: 'Join the Fitness \nClub',
+                  fontSize: 32,
                 ),
                 SizedBox(height: Kdefaltpadding),
 
                 StartTrainingButton(),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                SizedBox(height: KSize.getHeight(context) * 0.05),
               ],
             ),
           ),
