@@ -1,3 +1,4 @@
+import 'package:fitness/pages/splashPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,14 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'My Flutter App',
-            style: TextStyle(fontFamily: 'Alatsi'),
-          ),
-        ),
-      ),
+      home: Splashpage(),
     );
   }
 }
