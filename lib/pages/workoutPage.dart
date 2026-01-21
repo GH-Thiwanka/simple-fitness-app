@@ -1,3 +1,4 @@
+import 'package:fitness/widget/buttons.dart';
 import 'package:fitness/widget/colors.dart';
 import 'package:fitness/widget/containerWidget.dart';
 import 'package:fitness/widget/size.dart';
@@ -10,26 +11,73 @@ class Workoutpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(kDefaultFontSize),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Stack(
               children: [
-                InkWell(
-                  splashColor: KBlack,
-                  onTap: () {
-                    context.go('/home');
-                  },
-                  child: Icon(Icons.arrow_back_ios_new_outlined),
+                Image.asset(
+                  'assets/images/lift.jpg',
+                  height: 350,
+                  fit: BoxFit.fitHeight,
                 ),
-                Round01(),
-                SizedBox(height: KSize.getHeight(context) * 0.01),
-                Round01(),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: kDefaultFontSize,
+                    top: kDefaultFontSize * 4,
+                    bottom: kDefaultFontSize,
+                  ),
+                  child: SizedBox(
+                    height: 270,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InkWell(
+                          splashColor: KBlack,
+                          onTap: () {
+                            context.go('/home');
+                          },
+                          child: Icon(Icons.arrow_back_ios_new_outlined),
+                        ),
+                        KdefaultTextStyle(
+                          text: 'Full Body Workout',
+                          fontSize: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
-          ),
+
+            Padding(
+              padding: const EdgeInsets.all(kDefaultFontSize),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: double.infinity,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SmallButton(text: 'Cardio', color: KlightRed),
+                        SmallButton(text: 'Boxing', color: KlightRed),
+                        SmallButton(text: 'Zumba', color: KlightRed),
+                        SmallButton(text: 'Hiking', color: KlightRed),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: kDefaultFontSize),
+                  StartTrainingButton(),
+                  SizedBox(height: kDefaultFontSize),
+                  Round01(),
+                  SizedBox(height: KSize.getHeight(context) * 0.01),
+                  Round01(),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

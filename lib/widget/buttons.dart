@@ -51,8 +51,8 @@ class SmallButton extends StatelessWidget {
   final bool iswidth;
   const SmallButton({
     super.key,
-    this.height = 25,
-    this.width = 100,
+    this.height = 30,
+    this.width = 90,
     required this.text,
     this.color = const Color(0xFFB22222),
     this.fontSize = 10,
