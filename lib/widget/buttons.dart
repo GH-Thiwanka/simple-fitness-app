@@ -1,5 +1,4 @@
-import 'package:fitness/widget/colors.dart';
-import 'package:flutter/gestures.dart';
+import 'package:fitness/utility/colors.dart';
 import 'package:flutter/material.dart';
 
 class StartTrainingButton extends StatelessWidget {

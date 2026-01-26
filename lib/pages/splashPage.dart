@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:fitness/widget/buttons.dart';
-import 'package:fitness/widget/colors.dart';
-import 'package:fitness/widget/size.dart';
+import 'package:fitness/utility/size.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -14,18 +13,25 @@ class Splashpage extends StatefulWidget {
 }
 
 class _SplashpageState extends State<Splashpage> {
+  // Define the image provider once to ensure consistency
+  late ImageProvider _splashImage;
+
   @override
   void initState() {
     super.initState();
+    _splashImage = const AssetImage('assets/images/splimg.webp');
 
-    Timer(const Duration(seconds: 5), () {
+    // Timer remains here
+    Timer(const Duration(milliseconds: 3000), () {
       context.go('/home');
     });
   }
 
   @override
-  void setState(VoidCallback fn) {
-    super.setState(fn);
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // precacheImage is called here where context is fully ready
+    precacheImage(_splashImage, context);
   }
 
   @override
@@ -38,9 +44,13 @@ class _SplashpageState extends State<Splashpage> {
               Expanded(
                 child: Opacity(
                   opacity: 0.5,
-                  child: Image.asset(
-                    'assets/images/splimg.jpg',
-                    fit: BoxFit.cover,
+                  child: Hero(
+                    tag: 'hero-image',
+                    child: Image.asset(
+                      'assets/images/splimg.webp',
+
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -56,9 +66,9 @@ class _SplashpageState extends State<Splashpage> {
                   text: 'Join the Fitness \nClub',
                   fontSize: 32,
                 ),
-                SizedBox(height: Kdefaltpadding),
+                const SizedBox(height: Kdefaltpadding),
 
-                StartTrainingButton(),
+                const StartTrainingButton(),
                 SizedBox(height: KSize.getHeight(context) * 0.05),
               ],
             ),

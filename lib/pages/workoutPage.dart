@@ -1,7 +1,7 @@
 import 'package:fitness/widget/buttons.dart';
-import 'package:fitness/widget/colors.dart';
+import 'package:fitness/utility/colors.dart';
 import 'package:fitness/widget/containerWidget.dart';
-import 'package:fitness/widget/size.dart';
+import 'package:fitness/utility/size.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,7 +17,7 @@ class Workoutpage extends StatelessWidget {
             Stack(
               children: [
                 Image.asset(
-                  'assets/images/lift.jpg',
+                  'assets/images/lift.png',
                   height: 350,
                   fit: BoxFit.fitHeight,
                 ),
@@ -68,9 +68,9 @@ class Workoutpage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: kDefaultFontSize),
+                  const SizedBox(height: kDefaultFontSize),
                   StartTrainingButton(),
-                  SizedBox(height: kDefaultFontSize),
+                  const SizedBox(height: kDefaultFontSize),
                   Round01(),
                   SizedBox(height: KSize.getHeight(context) * 0.01),
                   Round01(),

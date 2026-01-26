@@ -1,8 +1,7 @@
-import 'package:fitness/pages/workoutPage.dart';
 import 'package:fitness/widget/buttons.dart';
-import 'package:fitness/widget/colors.dart';
+import 'package:fitness/utility/colors.dart';
 import 'package:fitness/widget/containerWidget.dart';
-import 'package:fitness/widget/size.dart';
+import 'package:fitness/utility/size.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -47,7 +46,7 @@ class _DashboardpageState extends State<Dashboardpage> {
                             context.go('/workout');
                           },
                           child: Containerwidget(
-                            imgPath: 'assets/images/cycling.jpg',
+                            imgPath: 'assets/images/cycling.png',
                             imgHight: KSize.getHeight(context) * 0.21,
                             imgWidth: KSize.getWidth(context) * 0.45,
                           ),
@@ -62,7 +61,7 @@ class _DashboardpageState extends State<Dashboardpage> {
                       alignment: AlignmentDirectional.bottomCenter,
                       children: [
                         Containerwidget(
-                          imgPath: 'assets/images/pushup.jpg',
+                          imgPath: 'assets/images/pushup.png',
                           imgHight: KSize.getHeight(context) * 0.21,
                           imgWidth: KSize.getWidth(context) * 0.45,
                         ),
@@ -84,17 +83,17 @@ class _DashboardpageState extends State<Dashboardpage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Containerwidget(
-                      imgPath: 'assets/images/yoga.jpg',
+                      imgPath: 'assets/images/yoga.png',
                       imgHight: KSize.getHeight(context) * 0.11,
                       imgWidth: KSize.getWidth(context) * 0.30,
                     ),
                     Containerwidget(
-                      imgPath: 'assets/images/run.jpg',
+                      imgPath: 'assets/images/run.png',
                       imgHight: KSize.getHeight(context) * 0.11,
                       imgWidth: KSize.getWidth(context) * 0.30,
                     ),
                     Containerwidget(
-                      imgPath: 'assets/images/strech.jpg',
+                      imgPath: 'assets/images/strech.png',
                       imgHight: KSize.getHeight(context) * 0.11,
                       imgWidth: KSize.getWidth(context) * 0.30,
                     ),
@@ -102,13 +101,13 @@ class _DashboardpageState extends State<Dashboardpage> {
                 ),
                 SizedBox(height: KSize.getHeight(context) * 0.05),
                 Opacitycard(
-                  imgPath: 'assets/images/medit.jpg',
+                  imgPath: 'assets/images/medit.png',
                   title: 'Find me a personal Trainer',
                   discription: 'Explore now',
                 ),
                 SizedBox(height: KSize.getHeight(context) * 0.02),
                 Opacitycard(
-                  imgPath: 'assets/images/dance.jpg',
+                  imgPath: 'assets/images/dance.png',
                   title: 'Find me group classes',
                   discription: 'Explore now',
                 ),

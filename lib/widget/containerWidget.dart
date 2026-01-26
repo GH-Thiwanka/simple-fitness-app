@@ -1,5 +1,5 @@
-import 'package:fitness/widget/colors.dart';
-import 'package:fitness/widget/size.dart';
+import 'package:fitness/utility/colors.dart';
+import 'package:fitness/utility/size.dart';
 import 'package:flutter/material.dart';
 
 class Containerwidget extends StatelessWidget {
@@ -34,7 +34,20 @@ class Containerwidget extends StatelessWidget {
               : null,
         ),
       ),
-    );
+    ); /* ClipRRect(
+      borderRadius: BorderRadius.circular(Kdefaltpadding),
+
+      child: Expanded(
+        child: Image.asset(
+          imgPath,
+          cacheHeight: imgHight.toInt(),
+          cacheWidth: imgHight.toInt(),
+          fit: BoxFit.fitWidth,
+          color: isOpacity ? Colors.black.withOpacity(0.5) : null,
+          colorBlendMode: isOpacity ? BlendMode.darken : null,
+        ),
+      ),
+    );*/
   }
 }
 
@@ -145,7 +158,7 @@ class Round01Stack extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(kDefaultFontSize),
                   child: Image.asset(
-                    'assets/images/run2.jpg',
+                    'assets/images/run2.png',
                     height: 50,
                     width: 50,
                     fit: BoxFit.fitHeight,
